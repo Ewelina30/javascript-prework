@@ -8,6 +8,12 @@ function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
 
+clearMessages();
+
+function playGame(three){
+
+	let playerInput = prompt('3: nożyce');
+
 let randomNumber = Math.floor(Math.random() * 3 + 1);
 let computerMove = getMoveName(randomNumber);
 
@@ -25,7 +31,7 @@ function getMoveName(argMoveId){
 
 printMessage('Mój ruch to: ' + computerMove);
 
-let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+/*let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');*/
 
 console.log('Gracz wpisał: ' + playerInput);
 
@@ -73,6 +79,15 @@ function displayResult(argComputerMove, argPlayerMove){
 		if(argComputerMove == 'nieznany ruch'){
 		   return 'Spróbuj jeszcze raz';
 		}
-	}
+}
 
 	printMessage(displayResult('kamień', 'papier'));
+
+}
+
+document.getElementById('play-rock').addEventListener('click', function(){
+		playGame('Kamień został kliknięty');
+document.getElementById('play-paper').addEventListener('click', function(){
+			playGame('Papier został kliknięty');
+document.getElementById('play-scissors').addEventListener('click', function(){
+				playGame('Nożyce zostały kliknięte');
