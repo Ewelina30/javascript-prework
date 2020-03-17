@@ -42,3 +42,15 @@ function playGame(playerMove){
 	printMessage(displayResult(computerMove, playerMove));
 
 }
+
+document.getElementById('play-rock').addEventListener('click', function() {
+		playGame('kamień');
+});
+
+document.getElementById('play-paper').addEventListener('click', function() {
+		playGame('papier');
+});
+
+document.getElementById('play-scissors').addEventListener('click', function() {
+		playGame('nożyce');
+});
