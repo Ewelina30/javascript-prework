@@ -1,24 +1,24 @@
-function printMessage(msg){
+const printMessage = function(msg){
 	let div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
 
-function clearMessages(){
+const clearMessages = function(){
 	document.getElementById('messages').innerHTML = '';
 }
 
 clearMessages();
 
-function playGame(playerMove){
+const playGame = function(playerMove){
 
-	function getMoveName(argMoveId){
+	const getMoveName = function(argMoveId){
     if(argMoveId == 1) return 'kamień';
     if(argMoveId == 2) return 'papier';
     if(argMoveId == 3) return 'nożyce';
   }
 
-  function displayResult(argComputerMove, argPlayerMove){
+  const displayResult = function(argComputerMove, argPlayerMove){
 
 		if((argComputerMove == 'kamień' && argPlayerMove == 'papier') ||
        (argComputerMove == 'papier' && argPlayerMove == 'nożyce') ||
@@ -33,8 +33,8 @@ function playGame(playerMove){
 		}
 }
 
-  const randomNumber = Math.floor(Math.random() * 3 + 1);
-  const computerMove = getMoveName(randomNumber);
+  const randomNumber = Math.floor(Math.random() * 3 + 1),
+ 				computerMove = getMoveName(randomNumber);
 
   printMessage('Mój ruch to: ' + computerMove);
   printMessage('Twój ruch to: ' + playerMove);
